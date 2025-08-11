@@ -12,6 +12,8 @@ from django.views.generic import CreateView
 from config.settings import EMAIL_HOST_USER
 from users.forms import UserRegisterForm
 from users.models import User
+from django.conf import settings
+
 
 
 class UserCreateView(CreateView):
@@ -57,10 +59,9 @@ def reset_password(request):
                 send_mail(
                     "Ваш новый пароль",
                     f"Ваш новый пароль: {new_password}",
-                    "EMAIL_HOST_USER",
+                    settings.EMAIL_HOST_USER,
                     [email],
-                    fail_silently=False,
-                )
+                    )
                 messages.success(
                     request, "Новый пароль отправлен на вашу электронную почту."
                 )
