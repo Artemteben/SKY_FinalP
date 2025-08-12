@@ -1,0 +1,30 @@
+[project]
+name = "diploma"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Artemteben",email = "artyom.teben@bk.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "asgiref (==3.9.1)",
+    "django (==4.2.2)",
+    "sqlparse (==0.5.3)",
+    "tzdata (==2025.2)",
+    "black (==24.10.0)",
+    "click (==8.1.8)",
+    "colorama (==0.4.6)",
+    "mypy-extensions (==1.0.0)",
+    "packaging (==24.2)",
+    "pathspec (==0.12.1)",
+    "pillow (==11.1.0)",
+    "platformdirs (==4.3.6)",
+    "psycopg2-binary (==2.9.10)",
+    "python-decouple (==3.8)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

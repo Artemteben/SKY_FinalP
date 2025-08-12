@@ -1,0 +1,54 @@
+### venv template
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+1.txt
+### Git template
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+.env
+!/Принц Персии в попытке изменить сво.txt
+
+!/Приспособление для проверки электро.txt
+
+!/Рис 2.jpeg
+
+!/Рис 3.jpg
+
+!/Рис 4.png
+
+!/Рис 5.jpg
+
+!/Рис 6.jpg
+
+__pycache__/
+*.pyc
+
+
+!/Рисунок1.jpg
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/.gitignore
+/.idea/diploma.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
