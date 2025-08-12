@@ -15,7 +15,6 @@ from users.models import User
 from django.conf import settings
 
 
-
 class UserCreateView(CreateView):
     model = User
     form_class = UserRegisterForm
@@ -36,7 +35,6 @@ class UserCreateView(CreateView):
             recipient_list=[user.email],
         )
         return super().form_valid(form)
-
 
 
 def email_verification(request, token):
@@ -61,7 +59,7 @@ def reset_password(request):
                     f"Ваш новый пароль: {new_password}",
                     settings.EMAIL_HOST_USER,
                     [email],
-                    )
+                )
                 messages.success(
                     request, "Новый пароль отправлен на вашу электронную почту."
                 )

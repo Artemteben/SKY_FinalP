@@ -6,9 +6,7 @@ from users.models import User
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         user = User.objects.create(
-            email="admin@example.com",
-            first_name='Admin',
-            last_name='Admin'
+            email="admin@example.com", first_name="Admin", last_name="Admin"
         )
 
         user.set_password("1234")
@@ -17,4 +15,8 @@ class Command(BaseCommand):
         user.is_staff = True
         user.is_active = True
         user.save()
-        self.stdout.write(self.style.SUCCESS(f'Successfully created admin user with email {user.email}'))
+        self.stdout.write(
+            self.style.SUCCESS(
+                f"Successfully created admin user with email {user.email}"
+            )
+        )

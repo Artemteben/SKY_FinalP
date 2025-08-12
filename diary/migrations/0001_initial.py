@@ -7,25 +7,50 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Entry',
+            name="Entry",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200, verbose_name='Заголовок')),
-                ('content', models.TextField(verbose_name='Содержимое')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='', verbose_name='Картинка')),
-                ('view_counter', models.PositiveIntegerField(default=0, verbose_name='Cчётчик просмотров')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200, verbose_name="Заголовок")),
+                ("content", models.TextField(verbose_name="Содержимое")),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Дата создания"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="Дата обновления"),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="", verbose_name="Картинка"
+                    ),
+                ),
+                (
+                    "view_counter",
+                    models.PositiveIntegerField(
+                        default=0, verbose_name="Cчётчик просмотров"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Запись',
-                'verbose_name_plural': 'Записи',
-                'ordering': ['-created_at'],
+                "verbose_name": "Запись",
+                "verbose_name_plural": "Записи",
+                "ordering": ["-created_at"],
             },
         ),
     ]

@@ -15,26 +15,52 @@ class UserAdmin(BaseUserAdmin):
     readonly_fields = ("last_login", "date_joined")
 
     fieldsets = (
-        (None, {
-            "fields": ("email", "password")
-        }),
-        ("Личная информация", {
-            "fields": ("first_name", "last_name", "phone", "country", "tg_name", "avatar")
-        }),
-        ("Статус", {
-            "fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions"),
-        }),
-        ("Важные даты", {
-            "fields": ("last_login", "date_joined"),
-        }),
-        ("Дополнительно", {
-            "fields": ("token",),
-        }),
+        (None, {"fields": ("email", "password")}),
+        (
+            "Личная информация",
+            {
+                "fields": (
+                    "first_name",
+                    "last_name",
+                    "phone",
+                    "country",
+                    "tg_name",
+                    "avatar",
+                )
+            },
+        ),
+        (
+            "Статус",
+            {
+                "fields": (
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "user_permissions",
+                ),
+            },
+        ),
+        (
+            "Важные даты",
+            {
+                "fields": ("last_login", "date_joined"),
+            },
+        ),
+        (
+            "Дополнительно",
+            {
+                "fields": ("token",),
+            },
+        ),
     )
 
     add_fieldsets = (
-        (None, {
-            "classes": ("wide",),
-            "fields": ("email", "password1", "password2", "is_active", "is_staff"),
-        }),
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("email", "password1", "password2", "is_active", "is_staff"),
+            },
+        ),
     )

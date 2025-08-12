@@ -12,11 +12,12 @@ class EntryAdmin(admin.ModelAdmin):
     ordering = ("-created_at",)
     readonly_fields = ("created_at", "updated_at", "view_counter")
     fieldsets = (
-        (None, {
-            "fields": ("title", "content", "image", "author")
-        }),
-        ("Дополнительная информация", {
-            "fields": ("created_at", "updated_at", "view_counter"),
-            "classes": ("collapse",)
-        }),
+        (None, {"fields": ("title", "content", "image", "author")}),
+        (
+            "Дополнительная информация",
+            {
+                "fields": ("created_at", "updated_at", "view_counter"),
+                "classes": ("collapse",),
+            },
+        ),
     )
