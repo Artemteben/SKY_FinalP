@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -11,8 +11,6 @@ from django.views.generic import (
 
 from diary.forms import EntryForm
 from diary.models import Entry
-from django.template.loader import render_to_string
-from django.http import JsonResponse
 
 
 class EntryListView(LoginRequiredMixin, ListView):

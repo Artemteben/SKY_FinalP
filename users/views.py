@@ -2,7 +2,6 @@ import secrets
 
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordResetForm
-from django.contrib.auth.views import LogoutView
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
@@ -60,14 +59,10 @@ def reset_password(request):
                     settings.EMAIL_HOST_USER,
                     [email],
                 )
-                messages.success(
-                    request, "Новый пароль отправлен на вашу электронную почту."
-                )
+                messages.success(request, "Новый пароль отправлен на почту.")
                 return redirect(reverse("users:login"))
             except User.DoesNotExist:
-                messages.error(
-                    request, "Пользователь с таким адресом электронной почты не найден."
-                )
+                messages.error(request, "User с таким адресом не найден.")
     else:
         form = PasswordResetForm()
     return render(request, "users/reset_password.html", {"form": form})

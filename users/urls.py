@@ -1,13 +1,9 @@
 from django.contrib.auth.views import (
     LoginView,
     LogoutView,
-    PasswordChangeView,
-    PasswordChangeDoneView,
 )
-from django.template.defaulttags import url
 from django.urls import path
 
-from config import settings
 from users.apps import UsersConfig
 from users.views import UserCreateView, email_verification, reset_password
 
